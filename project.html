@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Khushi - Developer Portfolio </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <link rel = "stylesheet"href = "style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="left">Khushi's Portfolio</div>
+                <div class="right">
+                    <div class="toggle-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./About.html">About</a></li>
+                        <li><a href="./skills.html">Skills</a></li>
+                        <li><a href="./project.html">Project</a></li>
+                        <li><a href="./contact.html">Contact me</a></li>
+                    </ul>
+                </div>
+            </nav>        
+        </header>
+        <main>
+            <section class ="project-section">
+                <div class = "project">
+                    <h1><span class="text-purple">Project</span></h1><br>
+<p>
+    <hr>
+    <b>BookStore Project</b><br>
+
+    <p>Project Description:</p>
+        -Bookworm Haven is a full-stack bookstore project enabling users to explore, and review books seamlessly. <br>
+        -Admins add/edit/remove books users view added books, fostering community. <br>
+        -Built with MERN stack, connecting book enthusiasts seamlessly.<br>
+    <br><hr>
+    <hr>
+
+    <b>Auction Website</b><br>
+
+    <p>Project Description:</p><br>
+        -Auction is a dynamic auction website built with Python Flask, MySQL, HTML, CSS, and JavaScript.<br> 
+        -Users can browse, bid, and win items with features like authentication, item listing, bidding, and real-time updates on auction status.<br>
+        -Admin panel allows for item management and monitoring. With a responsive design and intuitive interface.<br>
+        -Auction offers a seamless auction experience for both buyers and sellers.<br>
+    <br><hr>
+
+    <b>Rock Paper and Scissor Website</b><br>
+
+    <p>Project Description:</p><br>
+    -This web-based Rock Paper Scissors game is built using HTML, CSS, and JavaScript. <br>
+    -Users can click on their choice of rock, paper, or scissors, and the computer randomly selects its choice.<br>
+    -The result is displayed, indicating whether the user wins, loses, or ties with the computer. <br>
+    -With its simple and interactive design, this game offers a fun way to pass the time and test your luck!<br>
+    <br><hr>
+        
+</p>
+                </div>
+            </section>
+        </main>
+
+    </body>
+    <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            toggleButton.classList.toggle('active');
+        }); 
+    </script>
+</html>

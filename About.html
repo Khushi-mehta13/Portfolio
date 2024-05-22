@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Khushi - Developer Portfolio </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <link rel = "stylesheet"href = "style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="left">Khushi's Portfolio</div>
+                <div class="right">
+                    <div class="toggle-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./About.html">About</a></li>
+                        <li><a href="./skills.html">Skills</a></li>
+                        <li><a href="./project.html">Project</a></li>
+                        <li><a href="./contact.html">Contact me</a></li>
+                    </ul>
+                </div>
+            </nav>        
+        </header>
+        <main>
+            <section class ="first-section">
+                <div class = "left-about">
+                    <h1>Profile</h1>
+                    <hr>
+                    <p>Versatile professional with a unique blend of expertise in
+                        <span class="text-purple">Backend Development and Software Engineering. </span>
+                        Skilled in creating modern web apps and using online marketing to boost growth and interaction. 
+                        Know many programming languages, tools, and marketing methods. 
+                        Good at solving problems, thinking creatively, and keeping up with new trends in the field.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+    </body>
+    <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            toggleButton.classList.toggle('active');
+        }); 
+    </script>
+</html>

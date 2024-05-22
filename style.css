@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+body {
+    background-color: rgb(0, 0, 33);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+nav {
+    background-color: rgb(20, 6, 53);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgb(205, 73, 163);
+}
+
+/* Media Queries for Responsive Navigation */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+.left {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.first-section div {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.left-section {
+    width: 100%;
+    height: auto;
+    margin: 20px 10px;
+    font-size: 24px;
+    text-align: center;
+}
+.left-about{
+    width: 100%;
+    height: auto;
+    margin: 20px 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.right-section, .right-about {
+    margin: 20px auto; /* Center the right section */
+    max-width: 90%; /* Limit the width for larger screens */
+    text-align: center;
+}
+
+.right-section img, .right-about img {
+    max-width: 90%; /* Make images responsive */
+    height: 450px;
+    border-radius: 20px; /* Adjusted border-radius for circular images */
+}
+
+hr {
+    border: 0;
+    background-color: rgb(205, 73, 163);
+    height: 2px;
+    margin: 20px;
+}
+
+.second-section {
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+}
+
+.second-section h1 {
+    font-size: 24px;
+}
+
+.box p {
+    margin: 20px;
+}
+
+.box pre {
+    font-size: 16px;
+    overflow: auto;
+}
+
+.project-section {
+    display: block;
+    text-align: justify;
+    margin: 20px;
+}
+
+.project {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+.project p  {
+    margin: 10px;
+    text-align: left;
+}
+
+.project b {
+    font-size: 22px;
+    text-align: center;
+    margin: 10px;
+}
+
+.text-purple {
+    color: blueviolet;
+}
+
+.text-gray {
+    color: gray;
+}
+
+#element {
+    color: rgb(205, 73, 163);
+}
+
+.contact-form {
+    max-width: 90vw;
+    padding: 20px;
+    margin: auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit {
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    width: 100px;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: darkred;
+    padding: 15px;
+}
+
+/* Style for the Skills section */
+.skills {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto; /* Center the skills section */
+    max-width: 90vw;
+}
+
+.skills h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Style for individual skills */
+.skill {
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Style for progress bars */
+.progress-bar {
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.progress {
+    background-color: orchid; /* Green color for progress */
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+.thankyou-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.thankyou-message {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.thankyou-message h1 {
+    color: #6f42c1;
+}
+
+.thankyou-message p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.thankyou-message a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6f42c1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.thankyou-message a:hover {
+    background-color: #553a87;
+}
+.toggle-button {
+    display: none; /* Initially hide the toggle button */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    margin-top: -35px
+}
+
+.toggle-button span {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(250, 245, 245);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin-left: -220px;
+    
+}
+
+.toggle-button.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.toggle-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle-button.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.nav-links {
+    display: none; /* Hide navigation links by default */
+}
+
+.nav-links.active {
+    display: flex; /* Show navigation links when active class is added */
+    flex-direction: column;
+    background-color: rgb(20, 6, 53);
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 1;
+}
+
+.nav-links.active li {
+    margin: 5px;
+}
+
+.nav-links.active li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links.active li a:hover {
+    background-color: rgb(205, 73, 163);
+}
+
+/* Show toggle button only on smaller screens */
+@media screen and (max-width: 768px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    nav ul {
+        display: none; /* Initially hide the navigation links */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Position dropdown menu below toggle button */
+        left: 0;
+        width: 100%;
+        background-color: rgb(20, 6, 53);
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px; /* Rounded corners for dropdown menu */
+    }
+
+    nav ul.active {
+        display: flex; /* Show the navigation links when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+}
+
+
+/* Media queries for larger screens */
+@media screen and (min-width: 768px) {
+    .first-section {
+        flex-direction: row; /* Display left and right sections side by side */
+        justify-content: space-between; /* Ensure equal space between left and right sections */
+    }
+
+    .left-section,
+    .left-about {
+        width: 30%; /* Set width for left section */
+        margin-left: 10px; /* Add margin to left section for spacing */
+    }
+
+    .right-section,
+    .right-about {
+        width: 60%; /* Set width for right section */
+        margin-right: 10px; /* Add margin to right section for spacing */
+    }
+    /* Show navigation links by default */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hide toggle button for larger screens */
+.toggle-button {
+    display: none;
+}
+
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Khushi's Portfolio</div>
+            <div class="right">
+                <div class="toggle-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./About.html">About</a></li>
+                    <li><a href="./skills.html">Skills</a></li>
+                    <li><a href="./project.html">Project</a></li>
+                    <li><a href="./contact.html">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>        
+    </header>
+    <main>
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill">
+                <div class="skill-name">HTML</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;">90%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">CSS</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;">75%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">JavaScript</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">60%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">MySQL</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Java</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;">70%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">DBMS</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">MongoDB</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Node.js</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Postman</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;">85%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Python</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;">65%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Flask</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">60%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">ExpressJS</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;">85%</div>
+                </div>
+            </div>
+        </section>  
+    </main>
+</body>
+<script>
+const toggleButton = document.querySelector('.toggle-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            toggleButton.classList.toggle('active');
+        }); 
+</script>
+</html>
