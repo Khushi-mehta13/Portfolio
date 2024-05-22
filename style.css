@@ -99,7 +99,7 @@ nav ul li a:hover {
 .right-section img, .right-about img {
     max-width: 90%; /* Make images responsive */
     width:50%;
-    height: 450px;
+    height: 400px;
     border-radius: 20px; /* Adjusted border-radius for circular images */
 }
 
