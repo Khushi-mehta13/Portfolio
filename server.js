@@ -19,25 +19,22 @@ app.use((req, res, next) => {
 });
 
 app.options('*', (req, res) => {
-    res.status(204).send();
+    res.sendStatus(204);
 });
 
 app.post('/', async (req, res) => {
-    const formData = req.body;
+    const { name, email, message } = req.body;
 
-    if (formData && formData.name && formData.email && formData.message) {
-        const { name, email, message } = formData;
-
-        const to = "mehtakhushim@gmail.com";
+    if (name && email && message) {
+        const to = process.env.TO;
         const subject = "New Contact Form Submission";
-
         const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\nKhushi`;
 
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'mehtakhushim@gmail.com', 
-                pass: 'hqnu anwo chzp emvb'
+                user: process.env.TO,
+                pass: process.env.PASS
             }
         });
 
@@ -53,7 +50,7 @@ app.post('/', async (req, res) => {
             console.log('Email sent: ' + info.response);
             res.status(200).json({ message: "Email sent successfully" });
         } catch (error) {
-            console.error(error);
+            console.error('Error sending email:', error);
             res.status(500).json({ error: "Internal Server Error" });
         }
     } else {
