@@ -2,11 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({
+    origin: ['https://deploy-mern-1whq.vercel.app', 'http://127.0.0.1:5500'],
+    methods: ['POST', 'GET'],
+    credentials: true
+}));
 
 app.use(bodyParser.json());
 
