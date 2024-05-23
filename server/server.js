@@ -2,24 +2,30 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors({
+    origin: ['https://deploy-mern-1whq.vercel.app', 'http://127.0.0.1:5500'],
+    methods: ['POST', 'GET'],
+    credentials: true
+}));
+
 app.use(bodyParser.json());
 
-// Enable CORS
+// Enable CORS for all routes
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "POST, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(204);
+    }
     next();
-});
-
-app.options('*', (req, res) => {
-    res.sendStatus(204);
 });
 
 app.post('/', async (req, res) => {
