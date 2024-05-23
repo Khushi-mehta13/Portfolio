@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: ['https://deploy-mern-1whq.vercel.app', 'http://127.0.0.1:5500','https://khushi-mehta13.github.io/Portfolio/'],
+    origin: ['https://deploy-mern-1whq.vercel.app', 'http://127.0.0.1:5500','https://khushi-mehta13.github.io'],
     methods: ['POST', 'GET'],
     credentials: true
 }));
