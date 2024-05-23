@@ -9,6 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Enable CORS for specific origins
 app.use(cors({
     origin: ['https://deploy-mern-1whq.vercel.app', 'http://127.0.0.1:5500'],
     methods: ['POST', 'GET'],
@@ -17,7 +18,7 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-// Enable CORS for all routes
+// Enable CORS for all routes and handle pre-flight requests
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -31,39 +32,40 @@ app.use((req, res, next) => {
 app.post('/', async (req, res) => {
     const { name, email, message } = req.body;
 
-    if (name && email && message) {
-        const to = process.env.TO;
-        const subject = "New Contact Form Submission";
-        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\nKhushi`;
+    if (!name || !email || !message) {
+        return res.status(400).json({ error: "Missing parameters" });
+    }
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.TO,
-                pass: process.env.PASS
-            }
-        });
+    const to = process.env.TO;
+    const subject = "New Contact Form Submission";
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\nKhushi`;
 
-        const mailOptions = {
-            from: email,
-            to,
-            subject,
-            text: body
-        };
-
-        try {
-            const info = await transporter.sendMail(mailOptions);
-            console.log('Email sent: ' + info.response);
-            res.status(200).json({ message: "Email sent successfully" });
-        } catch (error) {
-            console.error('Error sending email:', error);
-            res.status(500).json({ error: "Internal Server Error" });
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.TO,
+            pass: process.env.PASS
         }
-    } else {
-        res.status(400).json({ error: "Missing parameters" });
+    });
+
+    const mailOptions = {
+        from: email,
+        to,
+        subject,
+        text: body
+    };
+
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent: ' + info.response);
+        res.status(200).json({ message: "Email sent successfully" });
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 });
 
+// Handle unsupported routes
 app.use((req, res) => {
     res.status(405).json({ error: "Method Not Allowed" });
 });
