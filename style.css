@@ -290,7 +290,8 @@ input[type="submit"]:hover {
     width: 30px;
     height: 21px;
     cursor: pointer;
-    margin-top: -35px
+    margin-top: -35px;
+    
 }
 
 .toggle-button span {
@@ -349,6 +350,38 @@ input[type="submit"]:hover {
 @media screen and (max-width: 768px) {
     .toggle-button {
         display: flex;
+        margin-left: 150px;
+    }
+
+    nav ul {
+        display: none; /* Initially hide the navigation links */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Position dropdown menu below toggle button */
+        left: 0;
+        width: 100%;
+        background-color: rgb(20, 6, 53);
+        padding: 10px 0;
+        border-radius: 0 0 10px 10px; /* Rounded corners for dropdown menu */
+    }
+
+    nav ul.active {
+        display: flex; /* Show the navigation links when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 365px) {
+    .toggle-button {
+        display: flex;
+        margin-left: 200px;
     }
 
     nav ul {
